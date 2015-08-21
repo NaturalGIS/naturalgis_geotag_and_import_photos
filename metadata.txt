@@ -1,19 +1,18 @@
 [general]
 name=Geotag and import photos
 description=Tag and GeoTag photos and import them as a point vector layer
+about=Developed by Alexander Bruy and funded/designed by Giovanni Manghi (NaturalGIS, http://www.naturalgis.pt/) and Lolita Bizzarri (Museo Regionale di Scienze Naturali della Valle d'Aosta, http://www.museoscienze.it/).
 category=Vector
-version=1.1.0
+version=1.2.0
 qgisMinimumVersion=2.0
-
 icon=icons/geotagphotos.png
 tags=vector,photo,geotag
-
 author=Alexander Bruy
 email=alexander.bruy@gmail.com
-
-homepage=http://hub.qgis.org/projects/geotagphotos/wiki
-tracker=http://hub.qgis.org/projects/geotagphotos
-repository=http://qgis.org/git/geotagphotos.git
-
+homepage=https://github.com/NaturalGIS/geotag_and_import_photos
+tracker=https://github.com/NaturalGIS/geotag_and_import_photos/issues
+repository=https://github.com/NaturalGIS/geotag_and_import_photos
 experimental=True
 deprecated=False
+changelog=1.2.0
+    - Migrated to new repository and bug tracker
