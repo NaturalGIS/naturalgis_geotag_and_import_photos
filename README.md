@@ -18,6 +18,8 @@ Before starting geotagging and tagging photos is needed to tell the plugin where
 
 Open the **Vector -> Geotag and import photos -> Settings** menu and in the resulting dialog set the appropriate path to the folder where _exiftool_ is located
 
+![](https://raw.githubusercontent.com/NaturalGIS/geotag_and_import_photos/master/icons/config_win.png)
+
 **Note:** For MS Windows is suggested to download the standalone version (that do not requires any dependency and no installation at all) and then rename the executable to "exiftool.exe" to allow using its use from the command line. See: http://www.sno.phy.queensu.ca/~phil/exiftool/
 
 ### GeoTag photos
@@ -35,6 +37,8 @@ When the "rename geotagged files" is selected the plugin makes a copy of the pho
 **date_hour:** is the date and hour when the photos was taken
 
 **progressivenumber:** self explanatory
+
+![](https://raw.githubusercontent.com/NaturalGIS/geotag_and_import_photos/master/icons/geotag.png)
 
 ### Tag photos
 
@@ -93,6 +97,8 @@ Rationale:
 
 If a config file is specified in the "tag photos" dialog (1) then it will be used, and will override (2) if defined. If there is no local config file, then plugin will use global config from plugin settings. And finally, if there is no global config exiftool will use the config file available in the "home" directory, if exists.
 
+![](https://raw.githubusercontent.com/NaturalGIS/geotag_and_import_photos/master/icons/tag.png)
+
 ### Import photos
 
 The last tool is the one that allows the use to import geo-tagged photos as a point vector layer (in shapefile format) inside a QGIS project. The tool is pretty straightforward to use, as it is just necessary to specify the folder that contains the photos to be imported (the tool will scan also subfolders) and the name of to give to the resulting point vector layer.
@@ -102,11 +108,15 @@ Interesting features of this tool:
 * It allows to append the results of the import to an already existing point vector layer
 * It allows to choose what tags to import from the photos: the imported tags will be used to populate the table of attributes of the resulting point vector layer
 
+![](https://raw.githubusercontent.com/NaturalGIS/geotag_and_import_photos/master/icons/at.png)
+
 along the process in the table of attributes of the resulting point vector layer will always be added two columns holding the absolute path and the filename of the imported photos
 
 **IMPORTANT**
 
 Shapefiles column names are by format design always limited to 10 chars maximum, so while importing EXIF tags this can result in truncated names.
+
+![](https://raw.githubusercontent.com/NaturalGIS/geotag_and_import_photos/master/icons/import.png)
 
 ### Styling with QGIS
 
