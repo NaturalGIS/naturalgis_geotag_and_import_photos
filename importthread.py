@@ -62,7 +62,6 @@ class ImportThread(QThread):
     def run(self):
         if self.appendFile:
             layer = self.openExistingLayer()
-            print "LAYER OPENED"
         else:
             layer = self.createNewLayer()
 
@@ -103,7 +102,6 @@ class ImportThread(QThread):
                         # create new feature
                         ft = QgsFeature()
                         ft.setFields(fields)
-                        print "FEATURE INITIALIZED"
 
                         for k, v in md.iteritems():
                             tagName = k.replace("EXIF:", "")
