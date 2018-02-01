@@ -115,7 +115,11 @@ class GeotaggingThread(QThread):
 
             self.process.start(self.command, self.arguments, QIODevice.ReadOnly)
             if not self.process.waitForFinished(-1):
-                print "Failed to process directory", dirName
+                QgsMessageLog.logMessage(
+                    "Failed to process directory " + dirName,
+                    tag='Geotag and import photos',
+                    level=QgsMessageLog.WARNING
+                )
 
             self.updateProgress.emit()
 
@@ -182,7 +186,11 @@ class GeotaggingThread(QThread):
                                 try:
                                     os.rename(fullPath, os.path.join(root, unicode(newName)))
                                 except OSError, e:
-                                    print e
+                                    QgsMessageLog.logMessage(
+                                        e,
+                                        tag='Geotag and import photos',
+                                        level=QgsMessageLog.CRITICAL
+                                    )
 
                                 self.updateProgress.emit()
 
@@ -194,7 +202,11 @@ class GeotaggingThread(QThread):
                                     break
 
     def geotagError(self, error):
-        print "ERROR:", unicode(error)
+        QgsMessageLog.logMessage(
+            error,
+            tag='Geotag and import photos',
+            level=QgsMessageLog.WARNING
+        )
 
     def stop(self):
         self.mutex.lock()

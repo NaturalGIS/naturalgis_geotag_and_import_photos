@@ -104,7 +104,11 @@ class TagPhotosThread(QThread):
 
             self.process.start(self.command, self.arguments, QIODevice.ReadOnly)
             if not self.process.waitForFinished(-1):
-                print "Failed to process directory", dirName
+                QgsMessageLog.logMessage(
+                    "Failed to process directory " + dirName,
+                    tag='Geotag and import photos',
+                    level=QgsMessageLog.WARNING
+                )
 
             self.updateProgress.emit()
 
@@ -121,7 +125,11 @@ class TagPhotosThread(QThread):
             self.processInterrupted.emit()
 
     def taggingError(self, error):
-        print "ERROR:", unicode(error)
+        QgsMessageLog.logMessage(
+            error,
+            tag='Geotag and import photos',
+            level=QgsMessageLog.WARNING
+        )
 
     def stop(self):
         self.mutex.lock()
